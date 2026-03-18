@@ -8,10 +8,38 @@ namespace it_company
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            bool exitProgram = false;
+            while (!exitProgram)
+            {
+                using (var formLogin = new FormLogin()) 
+                {
+                    if (formLogin.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var formorder = new FormOrder(
+                            formLogin.CurrentUser,
+                            formLogin.isGuest))
+                        {
+                            if (formorder.ShowDialog() == DialogResult.Cancel)
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                exitProgram = true;
+                            }
+                        }
+                        ;
+
+                    }
+                    else
+                    {
+                        exitProgram = true;
+                    }
+                }
+            }
         }
     }
 }

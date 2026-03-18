@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             PctrBox = new PictureBox();
             LoginPnl = new Panel();
-            button1 = new Button();
+            GuestBtn = new Button();
             LoginBtn = new Button();
             PasswordTxt = new TextBox();
             LoginTxt = new TextBox();
@@ -58,7 +58,7 @@
             // 
             LoginPnl.Anchor = AnchorStyles.Bottom;
             LoginPnl.BackColor = Color.FromArgb(242, 242, 242);
-            LoginPnl.Controls.Add(button1);
+            LoginPnl.Controls.Add(GuestBtn);
             LoginPnl.Controls.Add(LoginBtn);
             LoginPnl.Controls.Add(PasswordTxt);
             LoginPnl.Controls.Add(LoginTxt);
@@ -69,15 +69,16 @@
             LoginPnl.Size = new Size(372, 247);
             LoginPnl.TabIndex = 1;
             // 
-            // button1
+            // GuestBtn
             // 
-            button1.BackColor = Color.FromArgb(156, 211, 216);
-            button1.Location = new Point(23, 202);
-            button1.Name = "button1";
-            button1.Size = new Size(327, 26);
-            button1.TabIndex = 11;
-            button1.Text = "Войти как гость";
-            button1.UseVisualStyleBackColor = false;
+            GuestBtn.BackColor = Color.FromArgb(156, 211, 216);
+            GuestBtn.Location = new Point(23, 202);
+            GuestBtn.Name = "GuestBtn";
+            GuestBtn.Size = new Size(327, 26);
+            GuestBtn.TabIndex = 11;
+            GuestBtn.Text = "Войти как гость";
+            GuestBtn.UseVisualStyleBackColor = false;
+            GuestBtn.Click += GuestBtn_Click;
             // 
             // LoginBtn
             // 
@@ -148,7 +149,7 @@
 
         private PictureBox PctrBox;
         private Panel LoginPnl;
-        private Button button1;
+        private Button GuestBtn;
         private Button LoginBtn;
         private TextBox PasswordTxt;
         private TextBox LoginTxt;

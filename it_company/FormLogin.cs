@@ -39,5 +39,13 @@ namespace it_company
                 }
             }
         }
+
+        private void GuestBtn_Click(object sender, EventArgs e)
+        {
+            CurrentUser = null;
+            isGuest = true;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }
