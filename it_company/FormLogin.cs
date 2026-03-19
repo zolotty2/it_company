@@ -36,6 +36,11 @@ namespace it_company
                         this.Close();
 
                     }
+                    else
+                    {
+                        MessageBox.Show("Пользователь ненайден", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
                 }
             }
         }

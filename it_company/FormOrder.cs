@@ -221,13 +221,13 @@ namespace it_company
                         // Можно добавить префикс для отрицательных значений
                         if (days < 0)
                         {
-                            e.Value = $"{days} (просрочено)";
+                            e.Value = $"{days} ";
                             e.CellStyle.ForeColor = ColorTranslator.FromHtml("#721C24");
                             e.CellStyle.Font = new Font(DgvTasks.Font, FontStyle.Bold);
                         }
                         else if (days == 0)
                         {
-                            e.Value = $"{days} (сегодня)";
+                            e.Value = $"{days}";
                             e.CellStyle.ForeColor = ColorTranslator.FromHtml("#856404");
                             e.CellStyle.Font = new Font(DgvTasks.Font, FontStyle.Bold);
                         }
@@ -258,6 +258,11 @@ namespace it_company
             public string? Status { get; set; }
             public DateOnly? DateOfEnd { get; set; }
             public DateOnly DateOfCreate { get; set; }
+        }
+
+        private void FormOrder_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

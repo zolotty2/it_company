@@ -97,6 +97,7 @@
             PasswordTxt.Name = "PasswordTxt";
             PasswordTxt.Size = new Size(327, 26);
             PasswordTxt.TabIndex = 9;
+            PasswordTxt.UseSystemPasswordChar = true;
             // 
             // LoginTxt
             // 
